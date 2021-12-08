@@ -3,6 +3,8 @@ conda create -n yourenvname python=3.6 anaconda                                 
 . activate yourenvname                                                          #
 pip install -r requirements.txt                                                 #
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
 --django
 django-admin startproject project_name                                          #
 python manage.py startapp project_name                                          #
@@ -11,6 +13,8 @@ python manage.py runserver 0.0.0.0:8000                                         
 python manage.py migrate                                                        #
 python manage.py createsuperuser                                                #
 python manage.py shell                                                          #
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 --flask
 set FLASK_APP=flaskmat.py / export FLASK_APP=flaskmat.py                        #

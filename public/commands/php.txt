@@ -5,6 +5,8 @@ php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
 --laravel
 laravel new project_name                                                        #create projet with latest version
 composer create-project --prefer-dist laravel/laravel project_name "5.8.*"      #create project with name and laravel version
