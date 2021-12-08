@@ -1,0 +1,41 @@
+--composer
+#installation
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+
+--laravel
+laravel new project_name                                                        #create projet with latest version
+composer create-project --prefer-dist laravel/laravel project_name "5.8.*"      #create project with name and laravel version
+php artisan serve                                                               #start server(not using laragon magic)
+php artisan make:auth                                                           #make authentication
+php artisan make:migration filename                                             #make migration with selection
+php artisan make:model model_name                                               #make a model
+php artisan make:model model_name -m                                            #make a model with migration
+php artisan migrate                                                             #migrate all
+php artisan migrate --path=/database/migrations/filename/                       #migrate specfic file
+php artisan migrate:rollback                                                    #rollback last migrated tables
+php artisan migrate:rollback --step=1                                           #rollback specific migrated tables
+php artisan make:seeder filename                                                #create static/test data for populate into db later
+php artisan db:seed                                                             #populate all seed data into db
+php artisan db:seed --class=filename                                            #populate specific seed data into db
+php artisan make:controller controller_name                                     #make a controller
+php artisan queue:table                                                         #setup queue driver as database (need migrate if use database)
+php artisan make:job job_name                                                   #make a job
+php artisan schedule:run                                                        #schedule job (cronjob)
+php artisan queue:listen --queue=horizon_worker_name                            #run queued job in grouped queue or can just listen if no group
+php artisan queue:failed                                                        #check failed queue/job
+php artisan queue:retry job_id                                                  #retry failed job
+php artisan config:cache                                                        #clear laravel cache
+php artisan config:clear                                                        #clear laravel cache
+php artisan dump-server                                                         #laravel dump data debug
+
+--setup laravel >= 6.0
+laravel new project_name                                                        #create projet with latest version
+composer require laravel/ui                                                     #install laravel >= 6.0 ui
+php artisan ui vue --auth                                                       #create authentication
+php artisan migrate                                                             #db migration all
+npm install                                                                     #install npm
+npm install vue-router                                                          #install vue-router
+npm run watch                                                                   #start npm and continue to watch over changes

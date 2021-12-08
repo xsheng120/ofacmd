@@ -1,0 +1,29 @@
+git init                                                                        #initiate git in project
+git remote add origin https://git                                               #-
+git add .                                                                       #add all file to git
+git commit -m "commit message"                                                  #commit with message
+git push -u origin master                                                       #push to master
+
+git clone https://git                                                           #clone project from git
+git config --global user.name "user_name"                                       #config git user
+git status                                                                      #show project git status
+git checkout -b local_branch_name                                               #create new local branch
+git checkout local_branch_name                                                  #go to selected local branch
+git branch                                                                      #show current branch
+git branch -a                                                                   #show all branch
+git git_command --set-upstream origin local_branch_name                         #track current local branch with current remote branch (need when fetch, pull, push)
+git git_command --set-upstream-to                                               #^
+git git_command --track                                                         #^
+git fetch                                                                       #fetch all remote(origin) branch to all local(origin) branch
+git pull                                                                        #merge current remote branch to current local branch
+git pull origin remote_branch_name                                              #git fetch + merge spcified remote branch to current branch
+git add file_name                                                               #update file changes to git
+git commit -m "commit message"                                                  #commit file changes with message
+git push                                                                        #merge current local branch to current remote branch
+git merge other_branch                                                          #merge any other branch to current local branch
+git mergetool                                                                   #use git mergetool if conflict
+git branch -d local_branch_name                                                 #delete selected local branch
+git push origin --delete remote_branch_name                                     #delete selected remote branch
+git log                                                                         #check git commit_id for previous commit and push
+git reset commit_id                                                             #revert back the commit on local (use if code not pushed to remote)
+git revert commit_id                                                            #revert back the commit on local and git push (use if code is pushed to remote)

@@ -1,0 +1,5 @@
+composer install                                                                #install all package
+composer install package_name                                                   #install package
+composer update                                                                 #update all package
+composer remove package_name                                                    #uninstall package
+composer dump-autoload                                                          #

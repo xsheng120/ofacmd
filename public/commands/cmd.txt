@@ -1,0 +1,49 @@
+--window
+ssh -i key_file.key username@ip.ip.ip.ip                                        #shh to server terminal using ssh key (cmd/terminal/putty)
+
+--putty-pscp
+pscp                                                                            #run on where pscp.exe located
+pscp /file/ userid@serverhost:pathtocopy                                        #
+pscp -r /folder/ userid@serverhost:pathtocopy                                   #
+
+
+--linux (ubuntu 20.04)
+cd ~                                                                            #
+cd /var/www/html...                                                             #
+dpkg -S `package_name`                                                          #search package name
+sudo chown user:user -R /var/www/                                               #set owner as root:root or user:user (apply all sub dir also)
+sudo chmod 755 /var/www/                                                        #give permission
+744 - default permission, allows read, write, and execute permissions for the owner, and read permissions for the group and “world” users
+755 - full permssion to owner 
+ls -l                                                                           #view files/folders permission
+d (directory)
+c (character device)
+l (symlink)
+p (named pipe)
+s (socket)
+b (block device)
+D (door)
+- (regular file)
+ssh -i key_file.key username@ip.ip.ip.ip                                        #shh to server terminal using ssh key (cmd/terminal/putty)
+sudo /etc/network/interfaces                                                    #network file (hosts file in window)
+sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 80 -j ACCEPT       #insert iptables tcp rules for port 80 access ubuntu firewall
+sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 443 -j ACCEPT      #insert iptables tcp rules for port 443 access ubuntu firewall
+sudo iptables -I INPUT 6 -m state --state NEW -p udp --dport 443 -j ACCEPT      #insert iptables udp rules for port 443 access ubuntu firewall
+sudo netfilter-persistent save                                                  #save netfilter
+
+sudo apt update                                                                 #update all package in linux
+sudo apt list --installed                                                       #list all installed package
+sudo apt install nginx                                                          #install nginx
+sudo apt install php7.4 -y                                                      #install php7.4
+sudo apt install php7.4-fpm php7.4-cli php7.4-mysql php7.4-curl php7.4-json -y
+sudo apt install composer                                                       #install composer
+sudo apt purge php7.*/...                                                       #purge/uninstall php or ...
+sudo apt clean                                                                  #cleans the packages and install script in /var/cache/apt/archives/
+sudo apt autoclean                                                              #cleans obsolete deb-packages, less than clean
+sudo apt autoremove                                                             #removes orphaned packages which are not longer needed from the system, but not purges them
+
+systemctl status nginx                                                          #view nginx status
+sudo systemctl start nginx                                                      #start nginx
+sudo systemctl enable nginx                                                     #enable nginx
+sudo systemctl start php7.4-fpm                                                 #start php7.4-fpm
+sudo systemctl enable php7.4-fpm                                                #enable php7.4-fpm

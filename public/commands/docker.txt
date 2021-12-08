@@ -1,0 +1,25 @@
+Image: 
+- An image is an immutable, shareable file that is stored in a Docker-trusted registry. A Docker image is built up from a series of read-only layers. Each layer represents an instruction that is being given in the image’s Dockerfile. An image holds all the required binaries to run.
+
+Container: 
+- An instance of an image is called a container. A container is just an executable image binary that is to be run by the host OS. A running image is a container.
+
+Dockerfile: 
+- A Dockerfile is a text document that contains all of the commands / build instructions, a user could call on the command line to assemble an image. This will be saved as a Dockerfile. (Note the lowercase 'f'.)
+
+Docker-Compose: 
+- Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services (containers). Then, with a single command, you create and start all the services from your configuration. The Compose file would be saved as docker-compose.yml.
+
+
+docker build . -t image_name tag                                                #build dockerfile to image
+docker images                                                                   #see all docker image
+docker pull image_name                                                          #pull docker image to server
+docker run image_name                                                           #run this image
+docker start container_id                                                       #start this container
+docker stop container_id                                                        #stop this container
+docker-compose up -d                                                            #
+docker-compose down                                                             #
+docker ps                                                                       #list all running image
+docker info                                                                     #see overall container status
+docker rm -vf $(docker ps -a -q)                                                #delete all container including its volumes use
+docker rmi -f $(docker images -a -q)                                            #delete all the docker images

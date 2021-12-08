@@ -1,0 +1,11 @@
+--npm
+npm install package_name                                                        #install node package
+npm update                                                                      #update all node package
+npm start                                                                       #
+npm install --save axios react-router-dom redux react-redux redux-thunk lodash
+
+--react
+npm install -g create-react-app                                                 #init create react app
+create-react-app app_name                                                       #create react app name
+
+--vue

@@ -1,0 +1,36 @@
+--ssms
+<<query>>
+CREATE TABLE table_name (column_name column_definition NOT NULL IDENTITY(1,1) UNIQUE, column_name column_definition);
+EXEC SP_RENAME 'table_name.old_column_name', 'new_column_name';
+EXEC SP_RENAME 'table_name.old_column_name', 'new_column_name', 'column';
+ALTER TABLE table_name ADD column_name column_definition;
+ALTER TABLE table_name ALTER COLUMN column_name column_definition NOT NULL;
+ALTER TABLE table_name ADD CONSTRAINT constraint_name UNIQUE(column_name);
+ALTER TABLE table_name DROP COLUMN column_name;
+INSERT INTO table_name (column_name1, column_name2, column_name3) VALUES ('', '', '');
+UPDATE table_name SET column_name = '' WHERE ...;
+DELETE FROM table_name WHERE ...;
+Truncate TABLE table_name;
+CREATE INDEX index_name ON table_name (column_name ASC);
+DBCC CHECKIDENT ('table_name', RESEED, 0); GO                                   #reset auto_increment
+
+--mysql
+systemctl status mysql.service                                                  #
+sudo mysql -u root -p                                                           #
+show databases;                                                                 #
+use database_name;                                                              #
+query;                                                                          #
+
+<<query>>
+
+
+--postgres
+psql                                                                            #login
+\q                                                                              #logout
+\connect database_name                                                          #connect to db wanted
+select current_database();                                                      #check current db
+\l                                                                              #list all db
+\du                                                                             #
+
+<< query >>
+CREATE ROLE user_name LOGIN PASSWORD '12345';                                   #create another postgres main db login access
