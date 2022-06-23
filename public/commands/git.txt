@@ -27,3 +27,5 @@ git push origin --delete remote_branch_name                                     
 git log                                                                         #check git commit_id for previous commit and push
 git reset commit_id                                                             #revert back the commit on local (use if code not pushed to remote)
 git revert commit_id                                                            #revert back the commit on local and git push (use if code is pushed to remote)
+git reset --soft HEAD~1                                                         #delete the most recent commit, keeping the work done
+git reset --hard HEAD~1                                                         #delete the most recent commit, destroying the work done
